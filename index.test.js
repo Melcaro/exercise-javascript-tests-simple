@@ -73,12 +73,30 @@ const {
 //   });
 // });
 
-describe('summer module', () => {
-  test('should return sum of numbers', () => {
-    expect(summer(5)).toBe(15);
+// describe('summer module', () => {
+//   test('should return sum of numbers', () => {
+//     expect(summer(5)).toBe(15);
+//   });
+
+//   test('should return sum of numbers', () => {
+//     expect(summer(10)).toBe(55);
+//   });
+// });
+
+describe('countdown', () => {
+  afterEach(() => {
+    spy.mockReset();
   });
 
-  test('should return sum of numbers', () => {
-    expect(summer(10)).toBe(55);
+  const spy = jest.spyOn(console, 'log');
+
+  test('checked if console.log is called', () => {
+    countdown(5);
+    expect(spy).toHaveBeenCalledTimes(5);
+  });
+
+  test('checked if console.log is called', () => {
+    countdown(10);
+    expect(spy).toHaveBeenCalledTimes(10);
   });
 });
